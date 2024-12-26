@@ -46,6 +46,7 @@ def get_weather(location, selected_date):
         print(f"날씨 정보를 가져오는 중 오류: {e}")
         return None, None, None
 
+
 def show_recommendation(description, temp):
     recommendation = ""
 
@@ -55,19 +56,19 @@ def show_recommendation(description, temp):
     if temp >= 28:
         recommendation += "온도가 매우 높아 실내활동을 추천드립니다. \n" + temperature_clothing["28 이상"] + "와 같은 옷들을 입으시는 건 어떨까요?"
     elif 23 <= temp < 28:
-        recommendation += "추천 옷차림: " + temperature_clothing["23~27"]
+        recommendation += "날씨가 덥습니다. \n" + temperature_clothing["23~27"] + "와 같은 옷들을 입으시는 건 어떨까요?"
     elif 20 <= temp < 23:
-        recommendation += "추천 옷차림: " + temperature_clothing["20~22"]
+        recommendation += "날씨가 따뜻합니다. \n " + temperature_clothing["20~22"] + "와 같은 옷들을 입으시는 건 어떨까요?"
     elif 17 <= temp < 20:
-        recommendation += "추천 옷차림: " + temperature_clothing["17~19"]
+        recommendation += "날씨가 따뜻합니다. \n" + temperature_clothing["17~19"] + "와 같은 옷들을 입으시는 건 어떨까요?"
     elif 12 <= temp < 17:
         recommendation += "날씨가 쌀쌀합니다. \n" + temperature_clothing["12~16"] + "와 같은 옷들을 입으시는 건 어떨까요?"
     elif 9 <= temp < 12:
         recommendation += "날씨가 쌀쌀합니다. \n" + temperature_clothing["9~11"] + "와 같은 옷들을 입으시는 건 어떨까요?"
     elif 5 <= temp < 9:
-        recommendation += "추천 옷차림: " + temperature_clothing["5~8"]
+        recommendation += "온도가 낮습니다. \n" + temperature_clothing["5~8"] + "와 같은 옷들을 입으시는 건 어떨까요?"
     else:
-        recommendation += "추천 옷차림: " + temperature_clothing["4 이하"]
+        recommendation += "온도가 매우 낮습니다. \n" + temperature_clothing["4 이하"] + "와 같은 옷들을 입으시는 건 어떨까요?"
 
     recommendation_label.config(text=recommendation)
 
